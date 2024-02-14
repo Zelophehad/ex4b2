@@ -43,17 +43,23 @@
 			
 			var result = convertTemperature(t, u);//เรียกใช้
 
-			function isValidTemperature(t) { 
+			$("#result").html("Temperature is " + result.temperature + " in " + result.unit)
+		});
+		});
+
+			function isValidTemperature(temp) { 
 			   if(isNaN(temp)){
 					msg = "Please verify whether the temperature value is correct!!!";
 					alert(msg);
-					return;
+					return false;
 			   }
-			   if(!(t >= -100 && t <= 100)){
+			   if(!(temp >= -100 && temp <= 100)){
 					msg = "Tempurature entered (in Celsius) must be between 0 and 100 C'";
 					alert(msg);
-					return;}
-			   }
+					return false;
+				}return true;
+			}
+
 			function convertTemperature(t, u) {
 			   var t1;
 			   var u1;
@@ -68,10 +74,13 @@
 					t1 = t * (4/5);
 					u1 = "Kelvin";
 			   }
-			   
-			   alert("Temperature is "+t1+" in "+u1);}
-			});
-		});
+
+			result.temperature = t1;
+        	result.unit = u1;
+ 
+        	return result;
+			   }
+
 	</script>
 </body>
 </html>
