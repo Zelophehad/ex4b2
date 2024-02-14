@@ -41,6 +41,8 @@
             return;
         	}//เรียกใช้
 			
+			var result = convertTemperature(t, u);//เรียกใช้
+
 			function isValidTemperature(t) { 
 			   if(isNaN(temp)){
 					msg = "Please verify whether the temperature value is correct!!!";
@@ -52,7 +54,7 @@
 					alert(msg);
 					return;}
 			   }
-			   
+			function convertTemperature(t, u) {
 			   var t1;
 			   var u1;
 			   
@@ -67,7 +69,7 @@
 					u1 = "Kelvin";
 			   }
 			   
-			   alert("Temperature is "+t1+" in "+u1);
+			   alert("Temperature is "+t1+" in "+u1);}
 			});
 		});
 	</script>
